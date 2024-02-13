@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator| NIRDESH TIWARI</title>
+</head>
+<style>
+    /*In this style i did the table button and input box costumize with various properties*/
+    table{
+        margin-left: 40%;
+        margin-top: 30%;
+        scale: 2;
+    }
+
+    button{
+        width: 50px;
+        background-color: rgb(127, 246, 255);
+    }
+     
+    input{
+        width: 96%;
+    }
+</style>
+<body>
+    <!--calculator start-->
+   <table border="2">
+      <tr>
+        <td colspan="4"><input type="text" id="display" disabled></td>
+      </tr>  
+      <tr>
+       <td><button onclick="addvalue('9')">9</button></td>
+       <td><button onclick="reset()">C</button></td> <!-- C button is always in reset because it's function is to reset the data entered in calculator-->
+       <td><button onclick="addvalue('*')">*</button></td>
+       <td><button onclick="addvalue('/')">/</button></td>
+      </tr>
+      <tr>
+        <td><button onclick="addvalue('6')">6</button></td>
+        <td><button onclick="addvalue('7')">7</button></td>
+        <td><button onclick="addvalue('8')">8</button></td>
+        <td><button onclick="addvalue('-')">-</button></td>
+      </tr>
+      <tr>
+        <td><button onclick="addvalue('3')">3</button></td>
+        <td><button onclick="addvalue('4')">4</button></td>
+        <td><button onclick="addvalue('5')">5</button></td>
+        <td><button onclick="addvalue('+')">+</button></td>
+      </tr>
+      <tr>
+        <td><button onclick="addvalue('0')">0</button></td>
+        <td><button onclick="addvalue('1')">1</button></td>
+        <td><button onclick="addvalue('2')">2</button></td>
+        <td><button onclick="calculate()">=</button></td> <!--"=" button is always in calculate because it's function is to calculate the data entered in the calculator-->
+      </tr>
+   </table>
+  <!-- For Nepali Student or person
+     यसमा जुन button click गर्दा पनि देखाउनुको कारण चाहिँ माथीको value हामीले addvalue भन्ए function use  गरेको हुनाले भएको हो यदि हामीले function मात्रै लेखिम भन्ए चाहिँ value type हुन्छ calculate चाहिँ हुँदैन so त्यसको लागि further process गर्नु पर्छ अनि display ma चाहिँ value हरु add भई रहेको छ जुन concatenate भनिन्छ
+     & for world wide
+       When the button is clicked it will be seen in screen because the above value is used as a function (addvalue). Which is called concatenate -->
+<script>
+    
+    function addvalue(value){
+        document.getElementById("display").value += value; /* यसमा चाहिँ display function use भएको हो जसमा हामीले display गर्न सक्छौ value "+=" ले चाहिँ माथी बाट आएको value लाई calculate गर्ने काम गर्छ
+  
+        It has the use of display function in which we can display the value "+=" is used to calculate the value from above.*/
+    }
+    function reset(){
+        document.getElementById("display").value = "";/* यसमा चाहिँ reset value function use भएको हो जसमा हामीले value empty लेख्नु पर्छ नत्र reset हुँदैन
+        
+        It has reset value function use in which we have to write value empty otherwise it will not reset*/
+ }
+ function calculate(){
+    document.getElementById("display").value = eval(document.getElementById("display").value); /*यसमा चाहिँ हामी ले यो गर्नुको कारण चाहिँ हामीले display मा भएकाे value लाई calculate गरेर देखाउने भएको हुनाले गरेको हो
+    
+    
+    The reason we are doing this is because we are going to calculate and show the value on the display.*/
+ }
+</script>
+
+<!--calculator end-->
+</body>
+</html>
